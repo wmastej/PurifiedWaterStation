@@ -1,47 +1,37 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="min-h-screen">
+    <div class="sticky top-0 z-[1000]" style="background-color: var(--p-surface-0);">
+      <div class="max-w-[1000px] mx-auto">
+        <menu-bar />
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="max-w-[1000px] mx-auto px-8 py-8">
+      <h1>You did it!</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore ipsum modi harum reprehenderit corrupti eius similique, aliquam veritatis ab deserunt hic quidem at suscipit facere quisquam! Commodi consectetur facilis nostrum!</p>
+      <order-form />
+      <order-table />
+    </div>
+  </div>
 </template>
 
+<script>
+import MenuBar from './components/MenuBar.vue';
+import OrderForm from './components/OrderForm.vue';
+import OrderTable from './components/OrderTable.vue';
+
+export default {
+  components: {
+    MenuBar,
+    OrderForm,
+    OrderTable
+  },
+  data() {
+    return {
+
+    };
+  }
+};
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
